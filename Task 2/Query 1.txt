@@ -1,0 +1,32 @@
+use newdb;
+
+
+drop table if exists comment;
+drop table if exists article;
+
+create table if not exists article(
+id INT NOT NULL auto_increment,
+paragraph varchar(255),
+text varchar(255),
+primary key(id)
+);
+
+insert into article(paragraph, text) values
+('paragraph1', 'text1'),
+('paragraph2', 'text2');
+
+
+create table if not exists comment(
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    article_id int,
+    text varchar(255),
+    author varchar(255),
+	FOREIGN KEY (article_id) REFERENCES article(id) on delete cascade
+);
+
+insert into comment(article_id, text, author) values
+(1, 'add_text1', 'author1'),
+(1, 'add_text11', 'author1'),
+(2, 'add_text2', 'author2'),
+(2, 'add_text22', 'author2');
+

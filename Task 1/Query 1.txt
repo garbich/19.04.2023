@@ -1,0 +1,27 @@
+use newdb;
+
+drop table if exists users;
+drop table if exists profiles;
+
+create TABLE IF NOT EXISTS users (
+    id INT NOT NULL auto_increment,
+    name VARCHAR(255),
+    email VARCHAR(255),
+    PRIMARY KEY (id)
+);
+
+insert into users( name, email) values
+( 'igor', 'igor@gmail.com'),
+( 'arthur', 'artur@gmail.com');
+
+CREATE TABLE IF NOT EXISTS profiles (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    user_id INT,
+    birthday varchar(255),
+    phone VARCHAR(255),
+    FOREIGN KEY (user_id) REFERENCES users(id) on delete cascade
+);
+
+insert into profiles(user_id, birthday, phone) values
+(1, 12, 8805355),
+(2, 20, 07965415);

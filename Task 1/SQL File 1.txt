@@ -1,0 +1,18 @@
+use newdb;
+
+-- Task 1
+
+-- select * 
+-- from users as u
+-- join profiles as p
+-- on p.user_id = u.id;
+
+-- update profiles
+-- set phone = '123'
+-- where user_id = 2;
+
+-- Delete 
+-- from users
+-- where id = 1;
+
+

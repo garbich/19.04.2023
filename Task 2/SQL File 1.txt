@@ -1,0 +1,21 @@
+use newdb;
+
+-- Task 2
+
+-- select a.id, a.paragraph, count(c.id)
+-- from article as a
+-- join comment as c
+-- on a.id = c.article_id
+-- group by a.id;
+
+
+-- select a.id, c.text
+-- from article as a
+-- join comment as c
+-- on a.id = c.article_id
+-- where c.article_id = 1;
+
+-- delete 
+-- from article
+-- where id = 2;
+
